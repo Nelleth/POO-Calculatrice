@@ -7,7 +7,8 @@
 CXX = g++
 
 # Options de compilation
-CXXFLAGS = -Wall -std=c++11 -g -O0
+CXXFLAGS = -Wall -std=c++11 -g -O0 `wx-config --cxxflags`
+LDFLAGS=`wx-config --libs` 
 
 # Répertoires des fichiers d'en-tête
 INCS = -I./inc
@@ -45,7 +46,7 @@ prepare:
 	@if [ ! -d $(TEMP_TEST) ]; then mkdir -p $(TEMP_TEST); echo Compilation folders prepared.; fi
 
 $(PROG): $(OBJS)
-	$(CXX) -o $@ $^
+	$(CXX) -o $@ $^ `wx-config --libs`
 
 # Construire les .o à partir des .cpp
 Debug/src/functions.o: src/functions.cpp $(INCLUDES)
@@ -62,7 +63,7 @@ test: $(TEST)
 	@echo \'$<\' has been compiled. Do \'make runtest\' to execute.
 
 $(TEST): $(TESTS_OBJS)
-	$(CXX) -o $@ $^
+	$(CXX) -o $@ $^ $(LDFLAGS)
 
 Debug/test/functionstest.o: test/functionstest.cpp $(INCLUDES_TEST)
 	$(CXX) $(CXXFLAGS) $(INCS) -o $@ -c $<
