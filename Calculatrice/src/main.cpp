@@ -1,4 +1,6 @@
 #include <iostream>
+#include "functions.hpp"
+#include "display.hpp"s
 
 using namespace std;
 
