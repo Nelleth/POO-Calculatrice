@@ -1,16 +1,15 @@
 # POO-Calculatrice
 ____________________________________________
 Paramétrage à la première utilisation de Git
-____________________________________________
+
 
 $ git config --global user.name "John Doe"
 
 $ git config --global user.email johndoe@example.com
 
 
-___________________________________
+_________________________________________________________
 Mettre vos fichiers locaux sur Git      
-___________________________________
  
 git commit (dans le répertoire du projet)
   git add xxx.cpp si requis pour ajouter au commit (ex : si un fichier n'a pas été "pris" dans le commit)
@@ -20,6 +19,7 @@ git commit (dans le répertoire du projet)
 git pull (pour récupérer les modifs depuis le server)
 
 git push (pour mettre en ligne sur le server le commit)
+_____________________________________________________________________________________________________________
 
 
 
