@@ -5,8 +5,15 @@ Utilisation
 - Ouvrez un invite de commande associé à ce chemin
 - Ecrivez "make"
 
-- Pour lancer les tests : make runtest
-- Pour lancer le programme : make run
+- Pour lancer le programme : ./Calculator
+
+- Pour lancer les tests : make test
+  - cd test-bin
+  - ./Stack-test
+ 
+Pour revenir à la racine :
+- cd ..
+
 
 ____________________________________________
 Paramétrage à la première utilisation de Git
