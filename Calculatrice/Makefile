@@ -13,25 +13,25 @@ LDFLAGS=`wx-config --libs`
 # Répertoires des fichiers d'en-tête
 INCS = -I./inc
 # Fichier s d'en-tête
-INCLUDES = inc/display.hpp inc/functions.hpp
+INCLUDES = inc/Display.hpp inc/Stack.hpp inc/Operations.hpp
 # Fichiers source
-SRCS = src/display.cpp src/functions.cpp src/main.cpp
+SRCS = src/Display.cpp src/Stack.cpp src/Operations.cpp src/main.cpp
 # Fichiers objet
-OBJS = Debug/src/display.o Debug/src/functions.o Debug/src/main.o
+OBJS = Debug/src/Display.o Debug/src/Stack.o Debug/src/Operation.o Debug/src/main.o
 # Répertoires de compilation des sources
 TEMP = Debug/src
 # Executable
-PROG = calculatrice
+PROG = SC3000
 # Fichier d'en-tête des tests
-INCLUDES_TEST = inc/display.hpp inc/functions.hpp
+INCLUDES_TEST = inc/Display.hpp inc/Stack.hpp inc/Operations.hpp
 # Fichiers de tests
-TESTS_SRC = test/functionstest.cpp
+TESTS_SRC = test/TestStack.cpp
 # Fichiers objet de tests
-TESTS_OBJS = Debug/test/functionstest.o Debug/src/functions.o
+TESTS_OBJS = Debug/test/TestStack.o Debug/src/Stack.o Debug/src/Operations.o
 # Répertoires de compilation des tests
 TEMP_TEST = Debug/test
 # Executable de test
-TEST = test-calculatrice
+TEST = test-SC3000
 
 
 .PHONY: depend clean
@@ -49,10 +49,13 @@ $(PROG): $(OBJS)
 	$(CXX) -o $@ $^ `wx-config --libs`
 
 # Construire les .o à partir des .cpp
-Debug/src/functions.o: src/functions.cpp $(INCLUDES)
+Debug/src/Display.o: src/Display.cpp $(INCLUDES)
 	$(CXX) $(CXXFLAGS) $(INCS) -o $@ -c $<
 
-Debug/src/display.o: src/display.cpp $(INCLUDES)
+Debug/src/Stack.o: src/Stack.cpp $(INCLUDES)
+	$(CXX) $(CXXFLAGS) $(INCS) -o $@ -c $<
+
+Debug/src/Operations.o: src/Operations.cpp $(INCLUDES)
 	$(CXX) $(CXXFLAGS) $(INCS) -o $@ -c $<
 
 Debug/src/main.o: src/main.cpp $(INCLUDES)
@@ -65,7 +68,7 @@ test: $(TEST)
 $(TEST): $(TESTS_OBJS)
 	$(CXX) -o $@ $^ $(LDFLAGS)
 
-Debug/test/functionstest.o: test/functionstest.cpp $(INCLUDES_TEST)
+Debug/test/TestStack.o: test/TestStack.cpp $(INCLUDES_TEST)
 	$(CXX) $(CXXFLAGS) $(INCS) -o $@ -c $<
 
 run:
