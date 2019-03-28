@@ -1,5 +1,14 @@
 # POO-Calculatrice
 ____________________________________________
+Utilisation
+- Accédez au dossier Calculatrice
+- Ouvrez un invite de commande associé à ce chemin
+- Ecrivez "make"
+
+- Pour lancer les tests : make runtest
+- Pour lancer le programme : make run
+
+____________________________________________
 Paramétrage à la première utilisation de Git
 
 
