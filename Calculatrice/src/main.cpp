@@ -1,6 +1,8 @@
 #include <iostream>
-#include "functions.hpp"
-#include "display.hpp"
+#include "Display.hpp"
+#include "Stack.hpp"
+#include "Operations.hpp"
+
 
 using namespace std;
 
