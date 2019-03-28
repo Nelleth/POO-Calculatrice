@@ -17,7 +17,7 @@ INCLUDES = inc/Display.hpp inc/Stack.hpp inc/Operations.hpp
 # Fichiers source
 SRCS = src/Display.cpp src/Stack.cpp src/Operations.cpp src/main.cpp
 # Fichiers objet
-OBJS = Debug/src/Display.o Debug/src/Stack.o Debug/src/Operation.o Debug/src/main.o
+OBJS = Debug/src/Display.o Debug/src/Stack.o Debug/src/Operations.o Debug/src/main.o
 # Répertoires de compilation des sources
 TEMP = Debug/src
 # Executable
